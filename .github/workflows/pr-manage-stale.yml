@@ -75,7 +75,7 @@ jobs:
               $createdAt = $_.createdAt
               $prLabels = $_.labels
               $author = $_.author
-              $ageInHours = [int]($now - $createdAt).TotalHours
+              $ageInHours = [int]($now - $createdAt).TotalMinutes
           
               if ($ageInHours -eq 0) {
                   Write-Output "$($number): $title ($ageInHours hours old) - skipping"
