@@ -47,7 +47,7 @@ jobs:
               'Age: 🐤 - Mature', # 16 hours
               'Age: 🐓 - Old', # 32 hours
               'Age: 🍗 - Ancient', # 64 hours
-              'Age: ☠️ - Extinct' # 128 hours
+              'Age: 🦖 - Extinct' # 128 hours
           )
           
           # ensure labels exist - create them if they don't
