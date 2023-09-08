@@ -8,7 +8,7 @@ on:
   schedule:
     # run every 2nd hour
     # https://crontab.guru/#0_0/2_*_*_*
-    - cron: "0 0/2 * * *"
+    - cron: "0/2 * * * *"
 
   workflow_dispatch:
 
