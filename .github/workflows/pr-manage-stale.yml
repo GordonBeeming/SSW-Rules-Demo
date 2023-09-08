@@ -115,7 +115,7 @@ jobs:
 
               if ($ageAsPoints -eq 4 -and $author.is_bot -eq $false) { # older than 16 hours
                   $comment = @"
-          # Hi @$($author.login),
+          Howzit @$($author.login),
           
           This PR has been here a while. 
 
