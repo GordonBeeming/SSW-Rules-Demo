@@ -8,7 +8,7 @@ on:
   schedule:
     # run every 2nd hour
     # https://crontab.guru/#0_0/2_*_*_*
-    - cron: "0/2 * * * *"
+    - cron: "0 0/2 * * *"
 
   workflow_dispatch:
 
@@ -75,7 +75,7 @@ jobs:
               $createdAt = $_.createdAt
               $prLabels = $_.labels
               $author = $_.author
-              $ageInHours = [int]($now - $createdAt).TotalMinutes
+              $ageInHours = [int]($now - $createdAt).TotalHours
           
               if ($ageInHours -eq 0) {
                   Write-Output "$($number): $title ($ageInHours hours old) - skipping"
