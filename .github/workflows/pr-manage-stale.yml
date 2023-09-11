@@ -8,7 +8,7 @@ on:
   schedule:
     # run every 2nd hour
     # https://crontab.guru/#0_0/2_*_*_*
-    - cron: "0/2 * * * *"
+    - cron: "0 0/2 * * *"
 
   workflow_dispatch:
 
@@ -47,7 +47,7 @@ jobs:
               'Age: 🐤 - Mature', # 16 hours
               'Age: 🐓 - Old', # 32 hours
               'Age: 🍗 - Ancient', # 64 hours
-              'Age: ☠️ - Extinct' # 128 hours
+              'Age: 🦖 - Extinct' # 128 hours
           )
           
           # ensure labels exist - create them if they don't
@@ -75,7 +75,7 @@ jobs:
               $createdAt = $_.createdAt
               $prLabels = $_.labels
               $author = $_.author
-              $ageInHours = [int]($now - $createdAt).TotalMinutes
+              $ageInHours = [int]($now - $createdAt).TotalHours
           
               if ($ageInHours -eq 0) {
                   Write-Output "$($number): $title ($ageInHours hours old) - skipping"
@@ -115,7 +115,7 @@ jobs:
 
               if ($ageAsPoints -eq 4 -and $author.is_bot -eq $false) { # older than 16 hours
                   $comment = @"
-          # Hi @$($author.login),
+          Howzit @$($author.login),
           
           This PR has been here a while. 
 
