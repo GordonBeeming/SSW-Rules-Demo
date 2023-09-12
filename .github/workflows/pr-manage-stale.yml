@@ -1,3 +1,5 @@
+# Authors: @wicksipedia @william-liebenberg @GordonBeeming
+
 name: "PR - Manage Stale PRs"
 
 on:
